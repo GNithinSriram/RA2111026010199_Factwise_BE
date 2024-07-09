@@ -1,7 +1,7 @@
 # RA2111026010199_Factwise_BE
 factwise selection questions
 
-#question1 ans
+# question1 ans
   
     def number_to_words_length(n):
     # Define arrays for number words
@@ -37,7 +37,7 @@ factwise selection questions
     print("Total number of letters used from 1 to 1000 inclusive:", total_letters_used)
 
 
-#Question 2 ans
+# Question 2 ans
 
     def maxScore(cardPoints, k):
       n = len(cardPoints)
@@ -62,13 +62,13 @@ factwise selection questions
 
       return total_sum - min_subarray_sum
 
-# Function to take user input and print the result
+
     def main():
       cardPoints = list(map(int, input("Enter the card points separated by spaces: ").split()))
       k = int(input("Enter the number of cards to take: "))
       print("Maximum score:", maxScore(cardPoints, k))
 
-# Example usage
+
     if __name__ == "__main__":
       main()
 
