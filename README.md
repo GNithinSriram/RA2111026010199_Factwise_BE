@@ -35,3 +35,40 @@ factwise selection questions
     
     total_letters_used = number_to_words_length(1000)
     print("Total number of letters used from 1 to 1000 inclusive:", total_letters_used)
+
+
+#Question 2 ans
+
+    def maxScore(cardPoints, k):
+      n = len(cardPoints)
+      if k == n:
+          return sum(cardPoints)
+    
+      total_sum = sum(cardPoints)
+      window_size = n - k
+      min_subarray_sum = float('inf')
+      current_subarray_sum = 0
+
+      # Initial subarray sum of the first 'window_size' elements
+      for i in range(window_size):
+          current_subarray_sum += cardPoints[i]
+
+      min_subarray_sum = current_subarray_sum
+
+    # Slide the window across the array
+      for i in range(window_size, n):
+          current_subarray_sum += cardPoints[i] - cardPoints[i - window_size]
+          min_subarray_sum = min(min_subarray_sum, current_subarray_sum)
+
+      return total_sum - min_subarray_sum
+
+# Function to take user input and print the result
+    def main():
+      cardPoints = list(map(int, input("Enter the card points separated by spaces: ").split()))
+      k = int(input("Enter the number of cards to take: "))
+      print("Maximum score:", maxScore(cardPoints, k))
+
+# Example usage
+    if __name__ == "__main__":
+      main()
+
