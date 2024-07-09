@@ -4,7 +4,7 @@ factwise selection questions
 # question1 ans
   
     def number_to_words_length(n):
-    # Define arrays for number words
+    
         ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
             "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
         tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
@@ -49,13 +49,13 @@ factwise selection questions
       min_subarray_sum = float('inf')
       current_subarray_sum = 0
 
-      # Initial subarray sum of the first 'window_size' elements
+     
       for i in range(window_size):
           current_subarray_sum += cardPoints[i]
 
       min_subarray_sum = current_subarray_sum
 
-    # Slide the window across the array
+    
       for i in range(window_size, n):
           current_subarray_sum += cardPoints[i] - cardPoints[i - window_size]
           min_subarray_sum = min(min_subarray_sum, current_subarray_sum)
